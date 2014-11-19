@@ -11,5 +11,7 @@ Imports:
     grid
 Suggests:
     testthat
-License: MIT
+License: MIT + file LICENSE
 LazyData: true
+URL: https://github.com/MalditoBarbudo/MSOptimR
+BugReports: https://github.com/MalditoBarbudo/MSOptimR/issues
