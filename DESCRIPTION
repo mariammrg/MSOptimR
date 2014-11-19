@@ -1,0 +1,15 @@
+Package: MSOptimR
+Title: Custom Functions for MSOptim project
+Version: 0.0.0.9000
+Authors@R: "Victor Granda <victorgrandagarcia@gmail.com> [aut, cre]"
+Description: Conjunto de funciones personalizadas para llevar a cabo el proyecto
+    2014_CETEMAS_MSOPTIM.
+Depends:
+    R (>= 3.1.2)
+Imports:
+    ggplot2 (>= 1.0.0),
+    grid
+Suggests:
+    testthat
+License: MIT
+LazyData: true
