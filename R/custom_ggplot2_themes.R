@@ -9,7 +9,7 @@
 #' This function is part of a family of theming functions for ggplot2 plots
 #' which includes blue, green, red and grey combinations.
 #'
-#' @family ggplot2 theming functions
+#' @family custom ggplot2 theming functions
 #'
 #' @param base_size Given reference size.
 #' @param base_family Given font family.
@@ -24,6 +24,8 @@
 #'
 #' p
 #' p + theme_bluish()
+#'
+#' @export
 theme_bluish <- function (base_size = 12, base_family = "") {
   # Tema de ggplot2 con colores azules:
   # ggplot2 theme with bluish colors:
@@ -43,12 +45,12 @@ theme_bluish <- function (base_size = 12, base_family = "") {
                  axis.ticks = element_line(colour = "#1F3A93"),
                  axis.title.x = element_text(),
                  axis.title.y = element_text(angle = 90),
-                 axis.ticks.length = unit(0.15, "cm"),
-                 axis.ticks.margin = unit(0.1, "cm"),
+                 axis.ticks.length = grid::unit(0.15, "cm"),
+                 axis.ticks.margin = grid::unit(0.1, "cm"),
                  legend.background = element_rect(fill='transparent', colour = NA),
-                 legend.margin = unit(0.2, "cm"),
+                 legend.margin = grid::unit(0.2, "cm"),
                  legend.key = element_rect(fill='transparent', color='transparent'),
-                 legend.key.size = unit(1.2, "lines"),
+                 legend.key.size = grid::unit(1.2, "lines"),
                  legend.key.height = NULL,
                  legend.key.width = NULL,
                  legend.text = element_text(size = rel(0.8)),
@@ -63,7 +65,7 @@ theme_bluish <- function (base_size = 12, base_family = "") {
                  panel.border = element_blank(),
                  panel.grid.major = element_blank(),
                  panel.grid.minor = element_blank(),
-                 panel.margin = unit(0.1, "lines"),
+                 panel.margin = grid::unit(0.1, "lines"),
                  panel.margin.x = NULL,
                  panel.margin.y = NULL,
                  strip.background = element_rect(fill = "#89C4F4", colour = "#1F3A93", size = 0.2),
@@ -71,7 +73,7 @@ theme_bluish <- function (base_size = 12, base_family = "") {
                  strip.text.y = element_text(angle = -90),
                  plot.background = element_rect(fill='#89C4F4', colour=NA),
                  plot.title = element_text(size = rel(1.2)),
-                 plot.margin = unit(c(1, 1, 0.5, 0.5), "lines"),
+                 plot.margin = grid::unit(c(1, 1, 0.5, 0.5), "lines"),
                  complete = TRUE)
 }
 
@@ -98,9 +100,11 @@ theme_bluish <- function (base_size = 12, base_family = "") {
 #'
 #' p
 #' p + theme_greenish()
+#'
+#' @export
 theme_greenish <- function (base_size = 12, base_family = "") {
   # Tema de ggplot2 con colores verdes:
-  # ggplot2 theme with bluish colors:
+  # ggplot2 theme with greenish colors:
   # panel_bg: #C8F7C5
   # plot_bg & strip_bg: #87D37C
   # text_col & ticks_col & strip_col: #1E824C
@@ -117,12 +121,12 @@ theme_greenish <- function (base_size = 12, base_family = "") {
                  axis.ticks = element_line(colour = "#1E824C"),
                  axis.title.x = element_text(),
                  axis.title.y = element_text(angle = 90),
-                 axis.ticks.length = unit(0.15, "cm"),
-                 axis.ticks.margin = unit(0.1, "cm"),
+                 axis.ticks.length = grid::unit(0.15, "cm"),
+                 axis.ticks.margin = grid::unit(0.1, "cm"),
                  legend.background = element_rect(fill='transparent', colour = NA),
-                 legend.margin = unit(0.2, "cm"),
+                 legend.margin = grid::unit(0.2, "cm"),
                  legend.key = element_rect(fill='transparent', color='transparent'),
-                 legend.key.size = unit(1.2, "lines"),
+                 legend.key.size = grid::unit(1.2, "lines"),
                  legend.key.height = NULL,
                  legend.key.width = NULL,
                  legend.text = element_text(size = rel(0.8)),
@@ -137,7 +141,7 @@ theme_greenish <- function (base_size = 12, base_family = "") {
                  panel.border = element_blank(),
                  panel.grid.major = element_blank(),
                  panel.grid.minor = element_blank(),
-                 panel.margin = unit(0.1, "lines"),
+                 panel.margin = grid::unit(0.1, "lines"),
                  panel.margin.x = NULL,
                  panel.margin.y = NULL,
                  strip.background = element_rect(fill = "#87D37C", colour = "#1E824C", size = 0.2),
@@ -145,7 +149,7 @@ theme_greenish <- function (base_size = 12, base_family = "") {
                  strip.text.y = element_text(angle = -90),
                  plot.background = element_rect(fill='#87D37C', colour=NA),
                  plot.title = element_text(size = rel(1.2)),
-                 plot.margin = unit(c(1, 1, 0.5, 0.5), "lines"),
+                 plot.margin = grid::unit(c(1, 1, 0.5, 0.5), "lines"),
                  complete = TRUE)
 }
 
@@ -174,9 +178,11 @@ theme_greenish <- function (base_size = 12, base_family = "") {
 #'
 #' p
 #' p + theme_redish()
+#'
+#' @export
 theme_redish <- function (base_size = 12, base_family = "") {
   # Tema de ggplot2 con colores rojos:
-  # ggplot2 theme with bluish colors:
+  # ggplot2 theme with redish colors:
   # panel_bg: #F1A9A0
   # plot_bg & strip_bg: #EF4836
   # text_col & ticks_col & strip_col: #CF000F
@@ -193,12 +199,12 @@ theme_redish <- function (base_size = 12, base_family = "") {
                  axis.ticks = element_line(colour = "#CF000F"),
                  axis.title.x = element_text(),
                  axis.title.y = element_text(angle = 90),
-                 axis.ticks.length = unit(0.15, "cm"),
-                 axis.ticks.margin = unit(0.1, "cm"),
+                 axis.ticks.length = grid::unit(0.15, "cm"),
+                 axis.ticks.margin = grid::unit(0.1, "cm"),
                  legend.background = element_rect(fill='transparent', colour = NA),
-                 legend.margin = unit(0.2, "cm"),
+                 legend.margin = grid::unit(0.2, "cm"),
                  legend.key = element_rect(fill='transparent', color='transparent'),
-                 legend.key.size = unit(1.2, "lines"),
+                 legend.key.size = grid::unit(1.2, "lines"),
                  legend.key.height = NULL,
                  legend.key.width = NULL,
                  legend.text = element_text(size = rel(0.8)),
@@ -213,7 +219,7 @@ theme_redish <- function (base_size = 12, base_family = "") {
                  panel.border = element_blank(),
                  panel.grid.major = element_blank(),
                  panel.grid.minor = element_blank(),
-                 panel.margin = unit(0.1, "lines"),
+                 panel.margin = grid::unit(0.1, "lines"),
                  panel.margin.x = NULL,
                  panel.margin.y = NULL,
                  strip.background = element_rect(fill = "#EF4836", colour = "#CF000F", size = 0.2),
@@ -221,7 +227,7 @@ theme_redish <- function (base_size = 12, base_family = "") {
                  strip.text.y = element_text(angle = -90),
                  plot.background = element_rect(fill='#EF4836', colour=NA),
                  plot.title = element_text(size = rel(1.2)),
-                 plot.margin = unit(c(1, 1, 0.5, 0.5), "lines"),
+                 plot.margin = grid::unit(c(1, 1, 0.5, 0.5), "lines"),
                  complete = TRUE)
 }
 
@@ -250,9 +256,11 @@ theme_redish <- function (base_size = 12, base_family = "") {
 #'
 #' p
 #' p + theme_greyish()
+#'
+#' @export
 theme_greyish <- function (base_size = 12, base_family = "") {
   # Tema de ggplot2 con colores grises (NO escala de grises):
-  # ggplot2 theme with bluish colors:
+  # ggplot2 theme with greyish colors:
   # panel_bg: #ECECEC
   # plot_bg & strip_bg: #ABB7B7
   # text_col & ticks_col & strip_col: #6C7A89
@@ -269,12 +277,12 @@ theme_greyish <- function (base_size = 12, base_family = "") {
                  axis.ticks = element_line(colour = "#6C7A89"),
                  axis.title.x = element_text(),
                  axis.title.y = element_text(angle = 90),
-                 axis.ticks.length = unit(0.15, "cm"),
-                 axis.ticks.margin = unit(0.1, "cm"),
+                 axis.ticks.length = grid::unit(0.15, "cm"),
+                 axis.ticks.margin = grid::unit(0.1, "cm"),
                  legend.background = element_rect(fill='transparent', colour = NA),
-                 legend.margin = unit(0.2, "cm"),
+                 legend.margin = grid::unit(0.2, "cm"),
                  legend.key = element_rect(fill='transparent', color='transparent'),
-                 legend.key.size = unit(1.2, "lines"),
+                 legend.key.size = grid::unit(1.2, "lines"),
                  legend.key.height = NULL,
                  legend.key.width = NULL,
                  legend.text = element_text(size = rel(0.8)),
@@ -289,7 +297,7 @@ theme_greyish <- function (base_size = 12, base_family = "") {
                  panel.border = element_blank(),
                  panel.grid.major = element_blank(),
                  panel.grid.minor = element_blank(),
-                 panel.margin = unit(0.1, "lines"),
+                 panel.margin = grid::unit(0.1, "lines"),
                  panel.margin.x = NULL,
                  panel.margin.y = NULL,
                  strip.background = element_rect(fill = "#ABB7B7", colour = "#6C7A89", size = 0.2),
@@ -297,7 +305,7 @@ theme_greyish <- function (base_size = 12, base_family = "") {
                  strip.text.y = element_text(angle = -90),
                  plot.background = element_rect(fill='#ABB7B7', colour=NA),
                  plot.title = element_text(size = rel(1.2)),
-                 plot.margin = unit(c(1, 1, 0.5, 0.5), "lines"),
+                 plot.margin = grid::unit(c(1, 1, 0.5, 0.5), "lines"),
                  complete = TRUE)
 }
 

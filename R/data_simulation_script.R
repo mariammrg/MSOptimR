@@ -4,25 +4,6 @@
 
 ##  Power analysis empiríco ---------------------------------
 
-#  Vamos a simular unos datos para ver que podríamos obtener
-#  En primer lugar necesitamos saber más o menos las distribuciones
-#  que nos vamos a encontrar.
-#  Luego podemos hacer un power analysis preliminar
-#  Mediante la formula eff.size^2*n obtenida de
-#  http://stackoverflow.com/questions/2710609/power-analysis-in-r-for-two-way-anova
-#  (en un comentario de Stéphane Laurent) obtengo el ncp (non centrality parameter):
-#  lambda <- eff^2 * n
-#  Por otro lado, utilizo el planteamiento de
-#  https://stat.ethz.ch/pipermail/r-help/2011-April/273931.html
-#  para obtener el poder del análisis para cada factor y para la interacción mediante:
-#  pf(qf(1-alpha,Df1,Df2),Df1,Df2,ncp,lower.tail=FALSE)
-#  Para obtener los grados de libertad y el ncp necesitamos un n y un effc.size,
-#  con lo que hago simulaciones con diferentes n y effc.size para tener una idea de cuantas
-#  réplicas necesitaríamos.
-#  El effect.size se calcula en la página
-#  http://www.uccs.edu/~lbecker/
-
-
 #' Power analysis for a three-way ANOVA.
 #'
 #' \code{three_way_power} calculates the power of a three-way ANOVA.
