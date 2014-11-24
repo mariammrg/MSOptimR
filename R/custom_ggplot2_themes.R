@@ -7,7 +7,7 @@
 #' in bluish env's.
 #'
 #' This function is part of a family of theming functions for ggplot2 plots
-#' which includes blue, green, red and grey combinations.
+#' which includes blue, green, red, grey and minimalist combinations..
 #'
 #' @family custom ggplot2 theming functions
 #'
@@ -16,7 +16,8 @@
 #' @return Prints or saves the given plot in a bluish color scheme
 #'
 #' @seealso \code{\link{theme_greenish}} for green, \code{\link{theme_redish}}
-#'   for red, \code{\link{theme_greyish}} for grey
+#'   for red, \code{\link{theme_greyish}} for grey, as well as \code{\link{theme_minimalish}}
+#'   for a black&white minimalist plot.
 #'
 #' @examples
 #' p <- ggplot(mtcars) + geom_point(aes(x = wt, y = mpg,
@@ -83,7 +84,7 @@ theme_bluish <- function (base_size = 12, base_family = "") {
 #' it in bluish env's.
 #'
 #' This function is part of a family of theming functions for ggplot2 plots
-#' which includes blue, green, red and grey combinations.
+#' which includes blue, green, red, grey and minimalist combinations.
 #'
 #' @family ggplot2 theming functions
 #'
@@ -92,7 +93,8 @@ theme_bluish <- function (base_size = 12, base_family = "") {
 #' @return Prints or saves the given plot in a greenish color scheme
 #'
 #' @seealso \code{\link{theme_bluish}} for blue, \code{\link{theme_redish}}
-#'   for red, \code{\link{theme_greyish}} for grey
+#'   for red, \code{\link{theme_greyish}} for grey, as well as \code{\link{theme_minimalish}}
+#'   for a black&white minimalist plot.
 #'
 #' @examples
 #' p <- ggplot(mtcars) + geom_point(aes(x = wt, y = mpg,
@@ -161,7 +163,7 @@ theme_greenish <- function (base_size = 12, base_family = "") {
 #' in redish env's.
 #'
 #' This function is part of a family of theming functions for ggplot2 plots
-#' which includes blue, green, red and grey combinations.
+#' which includes blue, green, red, grey and minimalist combinations.
 #'
 #' @family ggplot2 theming functions
 #'
@@ -170,7 +172,8 @@ theme_greenish <- function (base_size = 12, base_family = "") {
 #' @return Prints or saves the given plot in a redish color scheme
 #'
 #' @seealso \code{\link{theme_bluish}} for blue, \code{\link{theme_greenish}}
-#'   for green, \code{\link{theme_greyish}} for grey
+#'   for green, \code{\link{theme_greyish}} for grey, as well as \code{\link{theme_minimalish}}
+#'   for a black&white minimalist plot.
 #'
 #' @examples
 #' p <- ggplot(mtcars) + geom_point(aes(x = wt, y = mpg,
@@ -239,7 +242,7 @@ theme_redish <- function (base_size = 12, base_family = "") {
 #' in greyish env's.
 #'
 #' This function is part of a family of theming functions for ggplot2 plots
-#' which includes blue, green, red and grey combinations.
+#' which includes blue, green, red, grey and minimalist combinations.
 #'
 #' @family ggplot2 theming functions
 #'
@@ -248,7 +251,8 @@ theme_redish <- function (base_size = 12, base_family = "") {
 #' @return Prints or saves the given plot in a greyish color scheme
 #'
 #' @seealso \code{\link{theme_bluish}} for blue, \code{\link{theme_greenish}}
-#'   for green, \code{\link{theme_redish}} for red
+#'   for green, \code{\link{theme_redish}} for red, as well as \code{\link{theme_minimalish}}
+#'   for a black&white minimalist plot.
 #'
 #' @examples
 #' p <- ggplot(mtcars) + geom_point(aes(x = wt, y = mpg,
@@ -309,6 +313,86 @@ theme_greyish <- function (base_size = 12, base_family = "") {
                  complete = TRUE)
 }
 
+
+## UNDER HEAVY MODIFICATIONS
+## NOT FINISHED YET!!!!!!!!!!!!!!!!!!!
+#' Minimalish theme for ggplot2 plots.
+#'
+#' \code{theme_minimalish} gives a ggplot2 plot a minimalist color scheme to integrate it
+#' in publishing env's.
+#'
+#' This function is part of a family of theming functions for ggplot2 plots
+#' which includes blue, green, red, grey and minimalist combinations.
+#'
+#' @family ggplot2 theming functions
+#'
+#' @param base_size Given reference size.
+#' @param base_family Given font family.
+#' @return Prints or saves the given plot in a minimalish color scheme
+#'
+#' @seealso \code{\link{theme_bluish}} for blue, \code{\link{theme_greenish}}
+#'   for green, \code{\link{theme_redish}} for red, as well as \code{\link{theme_minimalish}}
+#'   for a black&white minimalist plot.
+#'
+#' @examples
+#' p <- ggplot(mtcars) + geom_point(aes(x = wt, y = mpg,
+#' colour=factor(gear))) + facet_wrap(~am)
+#'
+#' p
+#' p + theme_minimalish()
+#'
+#' @export
+theme_minimalish <- function (base_size = 12, base_family = "") {
+  # Tema de ggplot2 con colores minimalistas:
+  # ggplot2 theme with minimalist colors:
+  # panel_bg: #transparent
+  # plot_bg & strip_bg: #transparent
+  # text_col & ticks_col & strip_col: #black
+  ggplot2::theme(line = element_line(colour = "black", size = 0.5, linetype = 1, lineend = "butt"),
+                 rect = element_rect(fill = "white", colour = "black", size = 0.5, linetype = 1),
+                 text = element_text(family = base_family, face = "plain", colour = "black",
+                                     size = base_size, hjust = 0.5, vjust = 0.5, angle = 0,
+                                     lineheight = 0.9),
+                 axis.text = element_text(size = rel(0.8)),
+                 strip.text = element_text(size = rel(0.8)),
+                 axis.line = element_blank(),
+                 axis.text.x = element_text(vjust = 1),
+                 axis.text.y = element_text(hjust = 1),
+                 axis.ticks = element_line(colour = "black"),
+                 axis.title.x = element_text(),
+                 axis.title.y = element_text(angle = 90),
+                 axis.ticks.length = grid::unit(0.15, "cm"),
+                 axis.ticks.margin = grid::unit(0.1, "cm"),
+                 legend.background = element_rect(fill='transparent', colour = NA),
+                 legend.margin = grid::unit(0.2, "cm"),
+                 legend.key = element_rect(fill='transparent', color='transparent'),
+                 legend.key.size = grid::unit(1.2, "lines"),
+                 legend.key.height = NULL,
+                 legend.key.width = NULL,
+                 legend.text = element_text(size = rel(0.8)),
+                 legend.text.align = NULL,
+                 legend.title = element_text(size = rel(0.8), face = "bold", hjust = 0),
+                 legend.title.align = NULL,
+                 legend.position = "right",
+                 legend.direction = NULL,
+                 legend.justification = "center",
+                 legend.box = NULL,
+                 panel.background = element_rect(fill = "transparent", colour = NA),
+                 panel.border = element_rect(fill = NA, colour='black', size=rel(1.2)),
+                 panel.grid.major = element_blank(),
+                 panel.grid.minor = element_blank(),
+                 panel.margin = grid::unit(0.1, "lines"),
+                 panel.margin.x = NULL,
+                 panel.margin.y = NULL,
+                 strip.background = element_rect(fill = "transparent", colour = "black", size = 0.2),
+                 strip.text.x = element_text(),
+                 strip.text.y = element_text(angle = -90),
+                 plot.background = element_rect(fill='transparent', colour=NA),
+                 plot.title = element_text(size = rel(1.2)),
+                 plot.margin = grid::unit(c(1, 1, 0.5, 0.5), "lines"),
+                 complete = TRUE)
+}
+
 #### Glass testing ---------------------------------
 #
 # foo.df <- data.frame(foo_v1=seq(1,10,1), foo_v2=seq(.5,5,.5), foo_f1=rep(c('a','b'),5))
@@ -319,6 +403,6 @@ theme_greyish <- function (base_size = 12, base_family = "") {
 # foo.plot + theme_greenish()
 # foo.plot + theme_redish()
 # foo.plot + theme_greyish()
-#
+# foo.plot + theme_minimalish()
 #### End glass testing -----------------------------
 

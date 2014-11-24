@@ -3,5 +3,6 @@
 export(theme_bluish)
 export(theme_greenish)
 export(theme_greyish)
+export(theme_minimalish)
 export(theme_redish)
 export(three_way_power)

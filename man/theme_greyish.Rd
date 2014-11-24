@@ -19,7 +19,7 @@ in greyish env's.
 }
 \details{
 This function is part of a family of theming functions for ggplot2 plots
-which includes blue, green, red and grey combinations.
+which includes blue, green, red, grey and minimalist combinations.
 }
 \examples{
 p <- ggplot(mtcars) + geom_point(aes(x = wt, y = mpg,
@@ -30,9 +30,11 @@ p + theme_greyish()
 }
 \seealso{
 \code{\link{theme_bluish}} for blue, \code{\link{theme_greenish}}
-  for green, \code{\link{theme_redish}} for red
+  for green, \code{\link{theme_redish}} for red, as well as \code{\link{theme_minimalish}}
+  for a black&white minimalist plot.
 
-Other ggplot2 theming functions: \code{\link{theme_bluish}};
-  \code{\link{theme_greenish}}; \code{\link{theme_redish}}
+Other ggplot2 theming functions: \code{\link{theme_greenish}};
+  \code{\link{theme_minimalish}};
+  \code{\link{theme_redish}}
 }
 
