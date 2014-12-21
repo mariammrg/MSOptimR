@@ -348,61 +348,66 @@ theme_minimalish <- function (base_size = 12, base_family = "") {
   # panel_bg: #transparent
   # plot_bg & strip_bg: #transparent
   # text_col & ticks_col & strip_col: #black
-  ggplot2::theme(line = element_line(colour = "black", size = 0.5, linetype = 1, lineend = "butt"),
-                 rect = element_rect(fill = "white", colour = "black", size = 0.5, linetype = 1),
+  ggplot2::theme(line = element_line(colour = "black", size = 1, linetype = 1, lineend = "butt"),
+                 rect = element_rect(fill = "transparent", colour = "black", size = 0.5, linetype = 1),
                  text = element_text(family = base_family, face = "plain", colour = "black",
                                      size = base_size, hjust = 0.5, vjust = 0.5, angle = 0,
                                      lineheight = 0.9),
-                 axis.text = element_text(size = rel(0.8)),
-                 strip.text = element_text(size = rel(0.8)),
-                 axis.line = element_blank(),
+                 axis.text = element_text(face = 'bold'),
+                 strip.text = element_text(size = rel(0.7)),
+                 axis.line = element_line(),
                  axis.text.x = element_text(vjust = 1),
                  axis.text.y = element_text(hjust = 1),
                  axis.ticks = element_line(colour = "black"),
-                 axis.title.x = element_text(),
-                 axis.title.y = element_text(angle = 90),
+                 axis.title = element_text(face = 'italic', size=rel(1.2)),
+                 axis.title.x = element_text(vjust = 0.2),
+                 axis.title.y = element_text(angle = 90, vjust = 1.2),
                  axis.ticks.length = grid::unit(0.15, "cm"),
                  axis.ticks.margin = grid::unit(0.1, "cm"),
-                 legend.background = element_rect(fill='transparent', colour = NA),
+                 legend.background = element_rect(colour = NA),
                  legend.margin = grid::unit(0.2, "cm"),
-                 legend.key = element_rect(fill='transparent', color='transparent'),
+                 legend.key = element_rect(color='transparent'),
                  legend.key.size = grid::unit(1.2, "lines"),
                  legend.key.height = NULL,
                  legend.key.width = NULL,
-                 legend.text = element_text(size = rel(0.8)),
+                 legend.text = element_text(size = rel(0.9)),
                  legend.text.align = NULL,
-                 legend.title = element_text(size = rel(0.8), face = "bold", hjust = 0),
+                 legend.title = element_text(face = "italic", hjust = 0),
                  legend.title.align = NULL,
                  legend.position = "right",
                  legend.direction = NULL,
                  legend.justification = "center",
                  legend.box = NULL,
-                 panel.background = element_rect(fill = "transparent", colour = NA),
-                 panel.border = element_rect(fill = NA, colour='black', size=rel(1.2)),
-                 panel.grid.major = element_blank(),
+                 panel.background = element_rect(colour = NA),
+                 panel.border = element_blank(),
+                 panel.grid.major = element_line(colour='darkgrey', size=rel(0.2)),
                  panel.grid.minor = element_blank(),
                  panel.margin = grid::unit(0.1, "lines"),
                  panel.margin.x = NULL,
                  panel.margin.y = NULL,
-                 strip.background = element_rect(fill = "transparent", colour = "black", size = 0.2),
+                 strip.background = element_rect(colour = "black", size = rel(0.5)),
                  strip.text.x = element_text(),
                  strip.text.y = element_text(angle = -90),
-                 plot.background = element_rect(fill='transparent', colour=NA),
+                 plot.background = element_rect(colour=NA),
                  plot.title = element_text(size = rel(1.2)),
                  plot.margin = grid::unit(c(1, 1, 0.5, 0.5), "lines"),
                  complete = TRUE)
 }
 
+
 #### Glass testing ---------------------------------
 #
 # foo.df <- data.frame(foo_v1=seq(1,10,1), foo_v2=seq(.5,5,.5), foo_f1=rep(c('a','b'),5))
 # foo.plot <- ggplot(foo.df, aes(x=foo_v1, y=foo_v2, colour=foo_f1))+
-#   geom_point()
+#   geom_point(size=4)
 #
 # foo.plot + theme_bluish()
 # foo.plot + theme_greenish()
 # foo.plot + theme_redish()
 # foo.plot + theme_greyish()
-# foo.plot + theme_minimalish()
+#
+# foo.plot.2 <- ggplot(foo.df, aes(x=foo_v1, y=foo_v2, shape=foo_f1))+
+#   geom_point(size=4)
+# foo.plot.2 + theme_minimalish(base_family='Times')
+#
 #### End glass testing -----------------------------
-
