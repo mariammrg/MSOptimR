@@ -36,6 +36,10 @@ p + theme_thesishPurple()
   for a black&white minimalist plot.
 
 Other custom ggplot2 theming functions: \code{\link{plot_variants}};
-  \code{\link{theme_bluish}}; \code{\link{theme_thesish}}
+  \code{\link{theme_bluish}};
+  \code{\link{theme_thesishBlue}};
+  \code{\link{theme_thesishGreen}};
+  \code{\link{theme_thesishRed}};
+  \code{\link{theme_thesish}}
 }
 
