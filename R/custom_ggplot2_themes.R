@@ -501,14 +501,14 @@ theme_thesish <- function (base_size = 12, base_family = "") {
 #'
 #' @export
 theme_thesishPurple <- function (base_size = 12, base_family = "") {
-  # Tema de ggplot2 con colores azules:
-  # ggplot2 theme with bluish colors:
-  # panel_bg: #DCC6E0(purple) or #ECECEC(gray)
+  # Tema de ggplot2 con colores morados:
+  # ggplot2 theme with purpleish colors:
+  # panel_bg: #dcc6e0
   # plot_bg & strip_bg: transparent
-  # text_col & ticks_col & strip_col: #6C7A89 (grey) or black or #913D88 (purple)
+  # text_col & ticks_col & strip_col: #9a12b3 (purple)
   ggplot2::theme(line = element_line(colour = "black", size = 0.5, linetype = 1, lineend = "butt"),
                  rect = element_rect(fill = "white", colour = "black", size = 0.5, linetype = 1),
-                 text = element_text(family = base_family, face = "plain", colour = "#913D88",
+                 text = element_text(family = base_family, face = "plain", colour = "#9a12b3",
                                      size = base_size, hjust = 0.5, vjust = 0.5, angle = 0,
                                      lineheight = 0.9),
                  axis.text = element_text(size = rel(0.8)),
@@ -516,7 +516,7 @@ theme_thesishPurple <- function (base_size = 12, base_family = "") {
                  axis.line = element_blank(),
                  axis.text.x = element_text(vjust = 1),
                  axis.text.y = element_text(hjust = 1),
-                 axis.ticks = element_line(colour = "#913D88"),
+                 axis.ticks = element_line(colour = "#9a12b3"),
                  axis.title.x = element_text(),
                  axis.title.y = element_text(angle = 90),
                  axis.ticks.length = grid::unit(0.15, "cm"),
@@ -535,7 +535,7 @@ theme_thesishPurple <- function (base_size = 12, base_family = "") {
                  legend.direction = NULL,
                  legend.justification = "center",
                  legend.box = NULL,
-                 panel.background = element_rect(fill = "#DCC6E0", colour = NA),
+                 panel.background = element_rect(fill = "#dcc6e0", colour = NA),
                  panel.border = element_blank(),
                  panel.grid.major = element_blank(),
                  panel.grid.minor = element_blank(),
@@ -550,6 +550,244 @@ theme_thesishPurple <- function (base_size = 12, base_family = "") {
                  plot.margin = grid::unit(c(1, 1, 0.5, 0.5), "lines"),
                  complete = TRUE)
 }
+
+
+#' Thesish green theme for ggplot2 plots.
+#'
+#' \code{theme_thesishGreen} gives a ggplot2 plot a formal but elegant
+#' color scheme to integrate in thesis env's.
+#'
+#' This function is part of a family of theming functions for ggplot2 plots
+#' which includes blue, green, red, grey and minimalist combinations..
+#'
+#' @family custom ggplot2 theming functions
+#'
+#' @param base_size Given reference size.
+#' @param base_family Given font family.
+#' @return Prints or saves the given plot in a greenish color scheme
+#'
+#' @seealso \code{\link{theme_bluish}} for blue,
+#'   \code{\link{theme_greenish}} for green, \code{\link{theme_redish}}
+#'   for red, \code{\link{theme_greyish}} for grey, as well as \code{\link{theme_minimalish}}
+#'   for a black&white minimalist plot.
+#'
+#' @examples
+#' p <- ggplot(mtcars) + geom_point(aes(x = wt, y = mpg,
+#' colour=factor(gear))) + facet_wrap(~am)
+#'
+#' p
+#' p + theme_thesishGreen()
+#'
+#' @export
+theme_thesishGreen <- function (base_size = 12, base_family = "") {
+  # Tema de ggplot2 con colores azules:
+  # ggplot2 theme with bluish colors:
+  # panel_bg: #c8f7c5
+  # plot_bg & strip_bg: transparent
+  # text_col & ticks_col & strip_col: #26a65b
+  ggplot2::theme(line = element_line(colour = "black", size = 0.5, linetype = 1, lineend = "butt"),
+                 rect = element_rect(fill = "white", colour = "black", size = 0.5, linetype = 1),
+                 text = element_text(family = base_family, face = "plain", colour = "#26a65b",
+                                     size = base_size, hjust = 0.5, vjust = 0.5, angle = 0,
+                                     lineheight = 0.9),
+                 axis.text = element_text(size = rel(0.8)),
+                 strip.text = element_text(size = rel(0.8)),
+                 axis.line = element_blank(),
+                 axis.text.x = element_text(vjust = 1),
+                 axis.text.y = element_text(hjust = 1),
+                 axis.ticks = element_line(colour = "#26a65b"),
+                 axis.title.x = element_text(),
+                 axis.title.y = element_text(angle = 90),
+                 axis.ticks.length = grid::unit(0.15, "cm"),
+                 axis.ticks.margin = grid::unit(0.1, "cm"),
+                 legend.background = element_rect(fill='transparent', colour = NA),
+                 legend.margin = grid::unit(0.2, "cm"),
+                 legend.key = element_rect(fill='transparent', color='transparent'),
+                 legend.key.size = grid::unit(1.2, "lines"),
+                 legend.key.height = NULL,
+                 legend.key.width = NULL,
+                 legend.text = element_text(size = rel(0.8)),
+                 legend.text.align = NULL,
+                 legend.title = element_text(size = rel(0.8), face = "bold", hjust = 0),
+                 legend.title.align = NULL,
+                 legend.position = "right",
+                 legend.direction = NULL,
+                 legend.justification = "center",
+                 legend.box = NULL,
+                 panel.background = element_rect(fill = "#c8f7c5", colour = NA),
+                 panel.border = element_blank(),
+                 panel.grid.major = element_blank(),
+                 panel.grid.minor = element_blank(),
+                 panel.margin = grid::unit(0.1, "lines"),
+                 panel.margin.x = NULL,
+                 panel.margin.y = NULL,
+                 strip.background = element_rect(fill = "transparent", colour = "#26a65b", size = 0.2),
+                 strip.text.x = element_text(),
+                 strip.text.y = element_text(angle = -90),
+                 plot.background = element_rect(fill='transparent', colour=NA),
+                 plot.title = element_text(size = rel(1.2)),
+                 plot.margin = grid::unit(c(1, 1, 0.5, 0.5), "lines"),
+                 complete = TRUE)
+}
+
+
+#' Thesish blue theme for ggplot2 plots.
+#'
+#' \code{theme_thesishBlue} gives a ggplot2 plot a formal but elegant
+#' color scheme to integrate in thesis env's.
+#'
+#' This function is part of a family of theming functions for ggplot2 plots
+#' which includes blue, green, red, grey and minimalist combinations..
+#'
+#' @family custom ggplot2 theming functions
+#'
+#' @param base_size Given reference size.
+#' @param base_family Given font family.
+#' @return Prints or saves the given plot in a greenish color scheme
+#'
+#' @seealso \code{\link{theme_bluish}} for blue,
+#'   \code{\link{theme_greenish}} for green, \code{\link{theme_redish}}
+#'   for red, \code{\link{theme_greyish}} for grey, as well as \code{\link{theme_minimalish}}
+#'   for a black&white minimalist plot.
+#'
+#' @examples
+#' p <- ggplot(mtcars) + geom_point(aes(x = wt, y = mpg,
+#' colour=factor(gear))) + facet_wrap(~am)
+#'
+#' p
+#' p + theme_thesishBlue()
+#'
+#' @export
+theme_thesishBlue <- function (base_size = 12, base_family = "") {
+  # Tema de ggplot2 con colores azules:
+  # ggplot2 theme with bluish colors:
+  # panel_bg: #e4f1fe
+  # plot_bg & strip_bg: transparent
+  # text_col & ticks_col & strip_col: #1e8bc3
+  ggplot2::theme(line = element_line(colour = "black", size = 0.5, linetype = 1, lineend = "butt"),
+                 rect = element_rect(fill = "white", colour = "black", size = 0.5, linetype = 1),
+                 text = element_text(family = base_family, face = "plain", colour = "#1e8bc3",
+                                     size = base_size, hjust = 0.5, vjust = 0.5, angle = 0,
+                                     lineheight = 0.9),
+                 axis.text = element_text(size = rel(0.8)),
+                 strip.text = element_text(size = rel(0.8)),
+                 axis.line = element_blank(),
+                 axis.text.x = element_text(vjust = 1),
+                 axis.text.y = element_text(hjust = 1),
+                 axis.ticks = element_line(colour = "#1e8bc3"),
+                 axis.title.x = element_text(),
+                 axis.title.y = element_text(angle = 90),
+                 axis.ticks.length = grid::unit(0.15, "cm"),
+                 axis.ticks.margin = grid::unit(0.1, "cm"),
+                 legend.background = element_rect(fill='transparent', colour = NA),
+                 legend.margin = grid::unit(0.2, "cm"),
+                 legend.key = element_rect(fill='transparent', color='transparent'),
+                 legend.key.size = grid::unit(1.2, "lines"),
+                 legend.key.height = NULL,
+                 legend.key.width = NULL,
+                 legend.text = element_text(size = rel(0.8)),
+                 legend.text.align = NULL,
+                 legend.title = element_text(size = rel(0.8), face = "bold", hjust = 0),
+                 legend.title.align = NULL,
+                 legend.position = "right",
+                 legend.direction = NULL,
+                 legend.justification = "center",
+                 legend.box = NULL,
+                 panel.background = element_rect(fill = "#e4f1fe", colour = NA),
+                 panel.border = element_blank(),
+                 panel.grid.major = element_blank(),
+                 panel.grid.minor = element_blank(),
+                 panel.margin = grid::unit(0.1, "lines"),
+                 panel.margin.x = NULL,
+                 panel.margin.y = NULL,
+                 strip.background = element_rect(fill = "transparent", colour = "#1e8bc3", size = 0.2),
+                 strip.text.x = element_text(),
+                 strip.text.y = element_text(angle = -90),
+                 plot.background = element_rect(fill='transparent', colour=NA),
+                 plot.title = element_text(size = rel(1.2)),
+                 plot.margin = grid::unit(c(1, 1, 0.5, 0.5), "lines"),
+                 complete = TRUE)
+}
+
+
+#' Thesish red theme for ggplot2 plots.
+#'
+#' \code{theme_thesishRed} gives a ggplot2 plot a formal but elegant
+#' color scheme to integrate in thesis env's.
+#'
+#' This function is part of a family of theming functions for ggplot2 plots
+#' which includes blue, green, red, grey and minimalist combinations..
+#'
+#' @family custom ggplot2 theming functions
+#'
+#' @param base_size Given reference size.
+#' @param base_family Given font family.
+#' @return Prints or saves the given plot in a greenish color scheme
+#'
+#' @seealso \code{\link{theme_bluish}} for blue,
+#'   \code{\link{theme_greenish}} for green, \code{\link{theme_redish}}
+#'   for red, \code{\link{theme_greyish}} for grey, as well as \code{\link{theme_minimalish}}
+#'   for a black&white minimalist plot.
+#'
+#' @examples
+#' p <- ggplot(mtcars) + geom_point(aes(x = wt, y = mpg,
+#' colour=factor(gear))) + facet_wrap(~am)
+#'
+#' p
+#' p + theme_thesishRed()
+#'
+#' @export
+theme_thesishRed <- function (base_size = 12, base_family = "") {
+  # Tema de ggplot2 con colores azules:
+  # ggplot2 theme with bluish colors:
+  # panel_bg: #fbb3aa
+  # plot_bg & strip_bg: transparent
+  # text_col & ticks_col & strip_col: #cf000f
+  ggplot2::theme(line = element_line(colour = "black", size = 0.5, linetype = 1, lineend = "butt"),
+                 rect = element_rect(fill = "white", colour = "black", size = 0.5, linetype = 1),
+                 text = element_text(family = base_family, face = "plain", colour = "#cf000f",
+                                     size = base_size, hjust = 0.5, vjust = 0.5, angle = 0,
+                                     lineheight = 0.9),
+                 axis.text = element_text(size = rel(0.8)),
+                 strip.text = element_text(size = rel(0.8)),
+                 axis.line = element_blank(),
+                 axis.text.x = element_text(vjust = 1),
+                 axis.text.y = element_text(hjust = 1),
+                 axis.ticks = element_line(colour = "#cf000f"),
+                 axis.title.x = element_text(),
+                 axis.title.y = element_text(angle = 90),
+                 axis.ticks.length = grid::unit(0.15, "cm"),
+                 axis.ticks.margin = grid::unit(0.1, "cm"),
+                 legend.background = element_rect(fill='transparent', colour = NA),
+                 legend.margin = grid::unit(0.2, "cm"),
+                 legend.key = element_rect(fill='transparent', color='transparent'),
+                 legend.key.size = grid::unit(1.2, "lines"),
+                 legend.key.height = NULL,
+                 legend.key.width = NULL,
+                 legend.text = element_text(size = rel(0.8)),
+                 legend.text.align = NULL,
+                 legend.title = element_text(size = rel(0.8), face = "bold", hjust = 0),
+                 legend.title.align = NULL,
+                 legend.position = "right",
+                 legend.direction = NULL,
+                 legend.justification = "center",
+                 legend.box = NULL,
+                 panel.background = element_rect(fill = "#fbb3aa", colour = NA),
+                 panel.border = element_blank(),
+                 panel.grid.major = element_blank(),
+                 panel.grid.minor = element_blank(),
+                 panel.margin = grid::unit(0.1, "lines"),
+                 panel.margin.x = NULL,
+                 panel.margin.y = NULL,
+                 strip.background = element_rect(fill = "transparent", colour = "#cf000f", size = 0.2),
+                 strip.text.x = element_text(),
+                 strip.text.y = element_text(angle = -90),
+                 plot.background = element_rect(fill='transparent', colour=NA),
+                 plot.title = element_text(size = rel(1.2)),
+                 plot.margin = grid::unit(c(1, 1, 0.5, 0.5), "lines"),
+                 complete = TRUE)
+}
+
 
 #### Glass testing ---------------------------------
 #
