@@ -38,8 +38,10 @@ p + theme_thesish()
 Other custom ggplot2 theming functions: \code{\link{plot_variants}};
   \code{\link{theme_bluish}};
   \code{\link{theme_thesishBlue}};
+  \code{\link{theme_thesishDarkOrange}};
   \code{\link{theme_thesishGreen}};
   \code{\link{theme_thesishPurple}};
-  \code{\link{theme_thesishRed}}
+  \code{\link{theme_thesishRed}};
+  \code{\link{theme_thesishYellow}}
 }
 
